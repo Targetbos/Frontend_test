@@ -1,0 +1,256 @@
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+@import "utils/reset";
+
+html {
+  line-height: $mainLineHeight;
+  font-size: $mainFontSize;
+  color: $mainFontColor;
+  height: 100%;
+
+  @media screen and (max-width: $desktopWidth) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: $tableWidth) {
+    font-size: 14px;
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 12px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $mainFont;
+  font-size: $mainFontSize;
+  font-weight: $mainFontWeight;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+  font-size: rem(24);
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+section,
+.section {
+  position: relative;
+  padding: rem(40) 0;
+
+  @media screen and (max-width: $desktopWidth) {
+    padding: rem(36) 0;
+  }
+
+  @media screen and (max-width: $desktopWidth) {
+    padding: rem(28) 0;
+  }
+
+  @media screen and (max-width: $desktopWidth) {
+    padding: rem(20) 0;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: #999;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: $widthContainer;
+  width: 100%;
+  flex: 0 0 auto;
+  position: relative;
+  margin: 0 auto;
+  border-radius: rem(3);
+  background: #fff;
+
+  @media screen and (max-width: $smDesktopWidth) {
+    max-width: $tableWidth;
+  }
+
+  @media screen and (max-width: $tableWidth) {
+    max-width: $phoneWidth;
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    max-width: $smPhoneWidth;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: rem(16) rem(24);
+
+  span {
+    color: #888888;
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: rem(18);
+      height: rem(18);
+      background: url("../images/icon-reset.png") no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+      margin-right: rem(5);
+    }
+
+  }
+
+  .active {
+    color: $icon-active;
+
+    &:before {
+      background-position: rem(-18) 0;
+
+    }
+  }
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+}
+
+.headTable {
+  display: flex;
+  flex-flow: row nowrap;
+  min-width: 100%;
+
+  .row {
+    display: flex;
+    min-width: 100%;
+  }
+
+  .cell {
+    display: flex;
+    justify-content: flex-start;
+    border: $border;
+    padding: rem(8);
+
+    label {
+      font-size: rem(12);
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      &:before {
+        content: "";
+        display: inline-block;
+        width: rem(12);
+        height: rem(12);
+        background: url("../images/icon-check.png");
+        margin-right: rem(4);
+      }
+    }
+
+
+    input {
+      display: none;
+    }
+  }
+
+}
+
+.bodyTable {
+  .row {
+    border-bottom: $border;
+
+    .cell {
+      display: flex;
+      justify-content: flex-start;
+      padding: rem(8);
+
+      span {
+        display: inline-block;
+        font-size: rem(16);
+        font-weight: normal;
+      }
+
+      i {
+        display: inline-block;
+        width: rem(16);
+        height: rem(16);
+        border-radius: rem(2);
+        margin-right: rem(4);
+      }
+    }
+  }
+}
+
+.id {
+  flex: 0 1 rem(69)/$widthContainer *100%;
+  justify-content: flex-end !important;
+  padding-right: rem(16) !important;
+}
+
+.name {
+  flex: 1 1 rem(186)/$widthContainer *100%;
+
+  span:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.year {
+  flex: 1 1 rem(78)/$widthContainer *100%;
+}
+
+.color {
+  flex: 1 1 rem(130)/$widthContainer *100%;
+}
+
+.pantone {
+  flex: 1 1 rem(177)/$widthContainer *100%;
+}
+
+.row {
+  display: flex;
+  min-width: 100%;
+  margin-bottom: rem(16);
+}
