@@ -26,7 +26,7 @@ git clone https://github.com/Targetbos/Frontend_test.git
 Заходим в папку проекта и устанавливаем
 
 ```sh
-$ cd medods
+$ cd Frontend_test
 $ npm install
 ```
 
